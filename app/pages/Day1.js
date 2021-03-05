@@ -14,7 +14,7 @@ class Day1 extends Component {
     return (
       <TouchableHighlight onPress={()=> this._jumpToDay()}>
           <View>
-            <Text>go to Day2</Text>
+            <Text>Go to Day2</Text>
           </View>
         </TouchableHighlight>
     );

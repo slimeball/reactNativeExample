@@ -12,7 +12,8 @@ const Stack = createStackNavigator();
 // create a component
 class Routes extends Component {
   backHome(navigation) {
-    navigation.navigate('Home')
+    console.log(1)
+    navigation.navigate('Home');
   }
   render() {
     return (
@@ -21,10 +22,9 @@ class Routes extends Component {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Day1" component={Day1} />
           <Stack.Screen name="Day2" component={Day2} options={({ navigation }) => ({
-            title: 'Awesome app',
             headerRight: () => (
               <Button
-                onPress={() => navigation.navigate('Home')}
+                onPress={()=> this.backHome(navigation)}
                 title="Back Home"
               />
             ),

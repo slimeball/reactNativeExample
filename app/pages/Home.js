@@ -10,10 +10,10 @@ class Home extends Component {
     this.state = {
       buttons: [
         {
-          title: 'Day1'
+          title: 'To Day1'
         },
         {
-          title: 'Day2'
+          title: 'To Day2'
         }
       ]
     }

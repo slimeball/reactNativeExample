@@ -7,7 +7,7 @@ class Day2 extends Component {
   render() {
     return (
       <View>
-        <Text>Day1</Text>
+        <Text>I'm Day2</Text>
       </View>
     );
   }

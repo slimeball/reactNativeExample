@@ -1,30 +1,35 @@
-//import liraries
 import React, { Component } from 'react';
-import { ScrollView, View, Text, SafeAreaView, TouchableHighlight, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, SafeAreaView, TouchableHighlight } from 'react-native';
 import Swiper from 'react-native-swiper';
+import styles from '../assets/style/HomeStyle';
 
-// create a component
 class Home extends Component {
   constructor(navigator) {
     super(navigator);
     this.state = {
       buttons: [
         {
-          title: 'To Day1'
+          title: 'Stopwatch'
         },
         {
           title: 'To Day2'
+        },
+        {
+          title: 'To Day3'
+        },
+        {
+          title: 'To Day4'
         }
       ]
     }
   }
-  _jumpToDay() {
-    this.props.navigation.navigate('Day1')
+  _jumpToDay(title) {
+    this.props.navigation.navigate(title);
   }
   render() {
     let Buttons = this.state.buttons.map((el, index)=>{
       return (
-        <TouchableHighlight style={[styles.touchButton]} key={index} onPress={()=> this._jumpToDay()}>
+        <TouchableHighlight style={[styles.touchButton]} underlayColor="#eee" key={index} onPress={()=> this._jumpToDay(el.title)}>
           <View>
             <Text>{el.title}</Text>
           </View>
@@ -33,7 +38,7 @@ class Home extends Component {
     })
     return (
       <SafeAreaView>
-        <ScrollView>
+        <ScrollView style={styles.main}> 
           <Swiper style={styles.wrapper}>
             <View style={styles.slide1}>
               <Text style={styles.text}>Hello Swiper</Text>
@@ -45,7 +50,7 @@ class Home extends Component {
               <Text style={styles.text}>And simple</Text>
             </View>
           </Swiper>
-          <View>
+          <View style={styles.buttonList}>
             {Buttons}
           </View>
         </ScrollView>
@@ -54,39 +59,4 @@ class Home extends Component {
   }
 }
 
-// define your styles
-const styles = StyleSheet.create({
-
-  wrapper: {
-    height: 200,
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB'
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5'
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9'
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
-  touchButton: {
-    width: 150
-  }
-});
-
-//make this component available to the app
 export default Home;

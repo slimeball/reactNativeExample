@@ -1,9 +1,8 @@
-//import liraries
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-// create a component
 class Day2 extends Component {
+  // this.props.navigation.navigate('Day2')
   render() {
     return (
       <View>
@@ -13,5 +12,4 @@ class Day2 extends Component {
   }
 }
 
-//make this component available to the app
 export default Day2;
